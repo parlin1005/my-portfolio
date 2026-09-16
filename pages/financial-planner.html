@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Financial Planner App</title>
+    
+    <!-- Google Fonts: Inter, Outfit, & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="../css/financial-planner.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>FINANCIAL<span>PLANNER</span></h1>
+            </div>
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-item btn-back-pill">&larr; Portofolio</a></li>
+                    <li><a href="../about.html" class="nav-item">About Me</a></li>
+                    <li><a href="sejarah.html" class="nav-item">Eksplorasi Sumut</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="planner-wrapper">
+        
+        <!-- Header Dashboard -->
+        <section class="dashboard-header">
+            <span class="section-title">KALKULATOR KEUTANGAN</span>
+            <h2>Perencanaan Target Keuangan</h2>
+            <div class="title-line-orange"></div>
+            <p>Hitung kebutuhan menabung bulanan secara presisi berdasarkan tenggat waktu targetmu.</p>
+            
+            <div class="tab-menu-container">
+                <button class="tab-btn active" data-tab="tab-emergency">
+                    <i class="fa-solid fa-wallet"></i> Dana Darurat
+                </button>
+                <button class="tab-btn" data-tab="tab-house">
+                    <i class="fa-solid fa-house-chimney"></i> Rumah Impian
+                </button>
+                <button class="tab-btn" data-tab="tab-education">
+                    <i class="fa-solid fa-graduation-cap"></i> Pendidikan Anak
+                </button>
+            </div>
+        </section>
+
+        <!-- Grid Utama Formulir & Hasil -->
+        <section class="planner-grid">
+            
+            <!-- Kolom Form Input (Kiri) -->
+            <div class="form-container">
+
+                <!-- Tab 1: Dana Darurat -->
+                <div id="tab-emergency" class="tab-content active">
+                    <h3><i class="fa-solid fa-wallet"></i> Target Dana Darurat</h3>
+                    <div class="input-group">
+                        <label for="emergency-target">Dana Darurat yang Harus Dikumpulkan (Rp)</label>
+                        <input type="text" id="emergency-target" class="input-nominal" placeholder="Contoh: 30,000,000">
+                    </div>
+                    <div class="input-group">
+                        <label for="emergency-saved">Tabungan Dana Darurat yang Sudah Ada (Rp)</label>
+                        <input type="text" id="emergency-saved" class="input-nominal" placeholder="Isi 0 jika belum ada">
+                    </div>
+                    <div class="input-group">
+                        <label>Target Waktu Dana Harus Terkumpul</label>
+                        <div class="date-select-group">
+                            <select id="emergency-month">
+                                <option value="0">Januari</option><option value="1">Februari</option>
+                                <option value="2">Maret</option><option value="3">April</option>
+                                <option value="4">Mei</option><option value="5">Juni</option>
+                                <option value="6" selected>Juli</option><option value="7">Agustus</option>
+                                <option value="8">September</option><option value="9">Oktober</option>
+                                <option value="10">November</option><option value="11">Desember</option>
+                            </select>
+                            <input type="number" id="emergency-year" value="2027" min="2026" class="input-year">
+                        </div>
+                    </div>
+                    <button id="btn-calc-emergency" class="btn-primary">Hitung Tabungan Bulanan</button>
+                </div>
+
+                <!-- Tab 2: DP Rumah -->
+                <div id="tab-house" class="tab-content">
+                    <h3><i class="fa-solid fa-house-chimney"></i> Target DP Rumah Impian</h3>
+                    <div class="input-group">
+                        <label for="house-target">Target DP Rumah yang Harus Dikumpulkan (Rp)</label>
+                        <input type="text" id="house-target" class="input-nominal" placeholder="Contoh: 100,000,000">
+                    </div>
+                    <div class="input-group">
+                        <label for="house-saved">Tabungan Rumah yang Sudah Ada (Rp)</label>
+                        <input type="text" id="house-saved" class="input-nominal" placeholder="Isi 0 jika baru mau mulai">
+                    </div>
+                    <div class="input-group">
+                        <label>Target Waktu Pembayaran DP Rumah</label>
+                        <div class="date-select-group">
+                            <select id="house-month">
+                                <option value="0">Januari</option><option value="1">Februari</option>
+                                <option value="2">Maret</option><option value="3">April</option>
+                                <option value="4">Mei</option><option value="5">Juni</option>
+                                <option value="6" selected>Juli</option><option value="7">Agustus</option>
+                                <option value="8">September</option><option value="9">Oktober</option>
+                                <option value="10">November</option><option value="11">Desember</option>
+                            </select>
+                            <input type="number" id="house-year" value="2027" min="2026" class="input-year">
+                        </div>
+                    </div>
+                    <button id="btn-calc-house" class="btn-primary">Hitung Tabungan Bulanan</button>
+                </div>
+
+                <!-- Tab 3: Pendidikan Anak -->
+                <div id="tab-education" class="tab-content">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Target Dana Pendidikan</h3>
+                    <div class="input-group">
+                        <label for="edu-target">Budget Dana Sekolah yang Harus Dikumpulkan (Rp)</label>
+                        <input type="text" id="edu-target" class="input-nominal" placeholder="Contoh: 40,000,000">
+                    </div>
+                    <div class="input-group">
+                        <label for="edu-saved">Tabungan Sekolah yang Sudah Ada (Rp)</label>
+                        <input type="text" id="edu-saved" class="input-nominal" placeholder="Contoh: 25,000,000">
+                    </div>
+                    <div class="input-group">
+                        <label>Target Waktu Anak Masuk Sekolah</label>
+                        <div class="date-select-group">
+                            <select id="edu-month">
+                                <option value="0">Januari</option><option value="1">Februari</option>
+                                <option value="2">Maret</option><option value="3">April</option>
+                                <option value="4">Mei</option><option value="5">Juni</option>
+                                <option value="6" selected>Juli</option><option value="7">Agustus</option>
+                                <option value="8">September</option><option value="9">Oktober</option>
+                                <option value="10">November</option><option value="11">Desember</option>
+                            </select>
+                            <input type="number" id="edu-year" value="2027" min="2026" class="input-year">
+                        </div>
+                    </div>
+                    <button id="btn-calc-edu" class="btn-primary">Hitung Tabungan Bulanan</button>
+                </div>
+
+            </div>
+
+            <!-- Kolom Hasil Analisis (Kanan) -->
+            <div class="result-showcase">
+                <div class="result-card">
+                    <h4><i class="fa-solid fa-chart-pie"></i> Ringkasan Hasil Analisis</h4>
+                    <div class="divider"></div>
+                    
+                    <div id="result-display-area" class="result-display-area">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-calculator"></i>
+                            <p>Silakan masukkan data keuangan kamu di formulir sebelah kiri, lalu klik tombol <strong>Hitung Tabungan Bulanan</strong> untuk melihat kalkulasi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Parlin Sianturi. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/financial-planner.js"></script>
+</body>
+</html>

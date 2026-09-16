@@ -1,0 +1,484 @@
+/* ==========================================================================
+   1. RESET, VARIABLE SISTEM & PORTOFOLIO VISUAL TOKENS
+   ========================================================================== */
+:root {
+    --bg-main: #f4f4f4;
+    --bg-section: #ffffff;
+    --bg-card: #ffffff;
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --text-white: #0f172a;
+    --text-muted: #475569;
+    --text-sub: #64748b;
+    --accent-orange: #ff6b35;
+    --accent-cyan: #0d9488;
+    --accent-green: #16a34a;
+    --accent-red: #dc2626;
+    --font-heading: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-top: 90px;
+    overflow-x: hidden;
+}
+
+/* Sub-heading & Decorative Line */
+.section-title {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent-orange);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.title-line-orange {
+    width: 42px;
+    height: 4px;
+    background-color: var(--accent-orange);
+    border-radius: 2px;
+    margin: 10px auto 20px auto;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGASI GLASSMORPHISM
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-white);
+    letter-spacing: 0.5px;
+}
+
+.logo h1 span {
+    color: var(--accent-orange);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--accent-orange);
+}
+
+.btn-back-pill {
+    background-color: rgba(255, 107, 53, 0.08);
+    color: var(--accent-orange) !important;
+    border: 1px solid rgba(255, 107, 53, 0.25);
+    padding: 8px 18px !important;
+    border-radius: 50px;
+    font-weight: 600 !important;
+}
+
+.btn-back-pill:hover {
+    background-color: var(--accent-orange);
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   3. STRUKTUR PLANNER WRAPPER & HEADER DASHBOARD
+   ========================================================================== */
+.planner-wrapper {
+    max-width: 1100px;
+    margin: 30px auto 60px;
+    padding: 0 5%;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.dashboard-header h2 {
+    font-family: var(--font-heading);
+    font-size: 30px;
+    color: var(--text-white);
+    font-weight: 800;
+}
+
+.dashboard-header p {
+    color: var(--text-sub);
+    font-size: 15px;
+}
+
+/* ==========================================================================
+   4. TAB MENU CONTAINER & BUTTONS
+   ========================================================================== */
+.tab-menu-container {
+    display: inline-flex;
+    background-color: var(--bg-card);
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    margin-top: 24px;
+    gap: 6px;
+}
+
+.tab-btn {
+    border: none;
+    background: none;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--accent-orange);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-orange);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(255, 107, 53, 0.3);
+}
+
+/* ==========================================================================
+   5. FORM CONTAINER & INPUT ELEMENTS
+   ========================================================================== */
+.planner-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.form-container {
+    background-color: var(--bg-card);
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeInUp 0.4s ease;
+}
+
+.tab-content h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--text-white);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tab-content h3 i {
+    color: var(--accent-orange);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14.5px;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: var(--text-white);
+    outline: none;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--accent-orange);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.12);
+}
+
+.date-select-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-year {
+    width: 130px !important;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--accent-orange);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.35);
+}
+
+/* ==========================================================================
+   6. SHOWCASE RESULT CARD & DYNAMIC DISPLAY
+   ========================================================================== */
+.result-showcase {
+    position: sticky;
+    top: 110px;
+}
+
+.result-card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border-subtle);
+    border-left: 4px solid var(--accent-orange);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.result-card h4 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-card h4 i {
+    color: var(--accent-cyan);
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--border-subtle);
+    margin: 16px 0 20px 0;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 10px;
+    color: var(--text-sub);
+}
+
+.empty-state i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--text-sub);
+    opacity: 0.5;
+}
+
+.empty-state p {
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+/* Dynamic Result Box Styles (Dihasilkan dari JS) */
+.result-success-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.result-title-badge {
+    font-family: var(--font-heading);
+    color: var(--accent-orange);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stat-label {
+    font-size: 12.5px;
+    color: var(--text-sub);
+}
+
+.stat-value {
+    font-family: var(--font-mono);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.stat-value.green {
+    color: var(--accent-green);
+}
+
+.stat-value.red {
+    color: var(--accent-red);
+}
+
+.result-divider {
+    height: 1px;
+    background-color: var(--border-subtle);
+    margin: 8px 0;
+}
+
+.monthly-highlight {
+    background-color: rgba(255, 107, 53, 0.06);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.monthly-highlight .stat-label {
+    color: var(--accent-orange);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.monthly-value {
+    font-family: var(--font-mono);
+    font-size: 24px;
+    color: var(--accent-orange);
+    font-weight: 800;
+    margin-top: 4px;
+}
+
+.monthly-value span {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--font-body);
+}
+
+.result-note-box {
+    font-size: 12.5px;
+    color: var(--text-sub);
+    line-height: 1.5;
+    background-color: rgba(13, 148, 136, 0.05);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   7. FOOTER & RESPONSIVE DESIGN
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-sub);
+    font-size: 13px;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 60px;
+    background-color: var(--bg-section);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+    
+    .planner-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .tab-menu-container {
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+        width: 100%;
+    }
+    
+    .tab-btn {
+        justify-content: center;
+    }
+    
+    .result-showcase {
+        position: static;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

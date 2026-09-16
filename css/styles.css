@@ -1,0 +1,606 @@
+/* ==========================================================================
+   1. RESET, CSS VARIABLES & TYPOGRAPHY SELARAS CV
+   ========================================================================== */
+:root {
+    --bg-main: #f4f4f4;
+    --bg-section: #ffffff;
+    --bg-card: #ffffff;
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --text-white: #0f172a;
+    --text-muted: #475569;
+    --text-sub: #64748b;
+    --accent-orange: #ff6b35;
+    --accent-cyan: #0d9488;
+    --font-heading: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-main);
+    color: var(--text-muted);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Sub-heading Aksen seperti pada Halaman CV */
+.section-title {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent-orange);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.section-title.title-cyan {
+    color: var(--accent-cyan);
+}
+
+.title-line-orange {
+    width: 42px;
+    height: 4px;
+    background-color: var(--accent-orange);
+    border-radius: 2px;
+    margin: 12px auto 28px;
+}
+
+.title-line-cyan {
+    width: 42px;
+    height: 4px;
+    background-color: var(--accent-cyan);
+    border-radius: 2px;
+    margin: 12px auto 28px;
+}
+
+.accent-orange { color: var(--accent-orange); }
+.icon-orange { color: var(--accent-orange); }
+.icon-cyan { color: var(--accent-cyan); }
+
+/* ==========================================================================
+   2. HEADER & NAVBAR
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.logo h1 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--text-white);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-orange);
+}
+
+.logo p {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-sub);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-orange);
+}
+
+.btn-cv-pill {
+    background-color: rgba(255, 107, 53, 0.1);
+    color: var(--accent-orange) !important;
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 600 !important;
+}
+
+.btn-cv-pill:hover {
+    background-color: var(--accent-orange);
+    color: #fff !important;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--text-white);
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-subtle);
+    padding: 10px 5%;
+}
+
+.mobile-menu ul { list-style: none; }
+.mobile-menu ul li a {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 5% 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1.2;
+}
+
+.role-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-cyan);
+    padding: 6px 14px;
+    background-color: rgba(13, 148, 136, 0.08);
+    border: 1px solid rgba(13, 148, 136, 0.25);
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    line-height: 1.15;
+    color: var(--text-white);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 17px;
+    color: var(--text-sub);
+    margin-bottom: 32px;
+    max-width: 520px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-pill-orange {
+    background-color: var(--accent-orange);
+    color: #ffffff !important;
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-pill-orange:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.35);
+}
+
+.btn-pill-dark {
+    background-color: #e2e8f0;
+    color: var(--text-white) !important;
+    border: 1px solid var(--border-subtle);
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-pill-dark:hover {
+    background-color: #cbd5e1;
+}
+
+.hero-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+.img-frame {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    padding: 6px;
+    border: 2px dashed var(--accent-orange);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   4. KARTU SEKSI (ABOUT, PROJECT, CONTACT)
+   ========================================================================== */
+.about-section, .project-section, .contact-section {
+    padding: 80px 5%;
+    background-color: var(--bg-section);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.project-section { background-color: var(--bg-main); }
+
+.about-container, .project-container, .contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-header, .project-header, .contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-header h2, .project-header h2, .contact-header h2 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    color: var(--text-white);
+}
+
+.about-grid, .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.about-item, .project-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.about-item:hover, .project-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(13, 148, 136, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.card-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.card-icon-box.orange {
+    background-color: rgba(255, 107, 53, 0.08);
+    color: var(--accent-orange);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.card-icon-box.cyan {
+    background-color: rgba(13, 148, 136, 0.08);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+.about-item h3, .project-item h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.about-item p, .project-item p {
+    font-size: 14px;
+    color: var(--text-sub);
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.view-link {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-white);
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+    transition: color 0.2s;
+}
+
+.view-link:hover { color: var(--accent-orange); }
+
+.view-link.disabled {
+    color: var(--text-sub);
+    cursor: not-allowed;
+    font-style: italic;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   5. CONTACT SECTION & FORM
+   ========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--bg-card);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+}
+
+.contact-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: rgba(255, 107, 53, 0.08);
+    color: var(--accent-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-detail h4 {
+    font-size: 14px;
+    color: var(--text-white);
+}
+
+.contact-detail p {
+    font-size: 13px;
+    color: var(--text-sub);
+}
+
+.contact-link {
+    color: var(--text-sub);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--accent-orange);
+    text-decoration: underline;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+    background-color: #fafafa;
+    font-family: var(--font-body);
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--accent-orange);
+    background-color: #fff;
+}
+
+.full-width { width: 100%; }
+
+/* Status pengiriman form kontak (sukses / error / loading) */
+.form-status {
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 18px;
+    margin-top: -4px;
+}
+
+.form-status.success { color: var(--accent-cyan); }
+.form-status.error   { color: #dc2626; }
+.form-status.loading { color: var(--text-sub); font-weight: 500; }
+
+/* ==========================================================================
+   6. MODAL STYLES (PENDIDIKAN & PENGALAMAN)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 1; transition: opacity 0.3s ease;
+}
+
+.modal-overlay.hidden { opacity: 0; pointer-events: none; }
+
+.modal-box {
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 90%; max-width: 520px; max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex; justify-content: space-between; align-items: flex-start;
+}
+
+.modal-title-group h2 {
+    font-family: var(--font-heading);
+    font-size: 20px; color: var(--text-white);
+}
+
+.modal-close-btn {
+    background: none; border: none; font-size: 18px; color: var(--text-sub); cursor: pointer;
+}
+
+.modal-body { padding: 24px; }
+
+/* Timeline & Accordion Mini Styles */
+.edu-timeline { border-left: 2px solid #cbd5e1; padding-left: 20px; position: relative; }
+.edu-item { position: relative; margin-bottom: 20px; }
+.edu-dot {
+    position: absolute; left: -26px; top: 4px;
+    width: 10px; height: 10px; border-radius: 50%; background-color: var(--accent-cyan);
+}
+.edu-item.latest .edu-dot { background-color: var(--accent-orange); }
+
+.acc-item { border: 1px solid var(--border-subtle); border-radius: 10px; margin-bottom: 10px; }
+.acc-trigger {
+    width: 100%; padding: 14px; background: none; border: none;
+    display: flex; align-items: center; gap: 12px; cursor: pointer; text-align: left;
+}
+.acc-avatar {
+    width: 36px; height: 36px; border-radius: 8px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+}
+.avatar-orange { background: rgba(255, 107, 53, 0.1); color: var(--accent-orange); }
+.avatar-cyan { background: rgba(13, 148, 136, 0.1); color: var(--accent-cyan); }
+
+.acc-main { flex: 1; }
+.acc-company { font-weight: 600; color: var(--text-white); font-size: 14px; }
+.acc-role { font-size: 12px; color: var(--text-sub); }
+.acc-badge-active {
+    font-size: 10px; padding: 2px 8px; border-radius: 20px;
+    background: rgba(16, 185, 129, 0.1); color: #10b981; font-weight: 700;
+}
+
+.acc-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 14px; }
+.acc-body.open { max-height: 200px; padding: 0 14px 14px; }
+.acc-desc { font-size: 13px; color: var(--text-sub); line-height: 1.5; }
+
+/* ==========================================================================
+   7. FOOTER & ANIMASI REVEAL
+   ========================================================================== */
+footer {
+    padding: 40px 5%; background-color: #ffffff; text-align: center;
+    border-top: 1px solid var(--border-subtle); font-size: 14px; color: var(--text-sub);
+}
+
+.social-links { display: flex; justify-content: center; gap: 16px; margin-top: 14px; }
+.social-links a { color: var(--text-sub); font-size: 20px; transition: color 0.2s; }
+.social-links a:hover { color: var(--accent-orange); }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+    .nav-links { display: none; }
+    .mobile-menu.open { display: block; }
+    .hero { flex-direction: column; text-align: center; padding-top: 110px; }
+    .hero-actions { justify-content: center; }
+    .contact-grid { grid-template-columns: 1fr; }
+}

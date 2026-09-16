@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARLIN SIANTURI | Portofolio</title>
+    
+    <!-- Google Fonts: Inter, Outfit, & JetBrains Mono (Selaras dengan Halaman CV) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navbar Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <h1>PARLIN<span>SIANTURI</span></h1>
+                <p>Aspiring Full-stack Developer</p>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-item">Beranda</a></li>
+                    <li><a href="#about" class="nav-item">Tentang Saya</a></li>
+                    <li><a href="#contact" class="nav-item">Kontak</a></li>
+                    <li><a href="#project" class="nav-item btn-cv-pill">Lihat Portofolio &rarr;</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger-btn" aria-label="Buka menu navigasi">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#home" class="nav-item">Beranda</a></li>
+                <li><a href="#about" class="nav-item">Tentang Saya</a></li>
+                <li><a href="#contact" class="nav-item">Kontak</a></li>
+                <li><a href="#project" class="nav-item">Lihat Portofolio</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <span class="role-badge"><i class="fa-solid fa-code"></i> Full-stack Developer Enthusiast</span>
+                <h1>Halo, Saya <span class="accent-orange">Parlin Sianturi</span></h1>
+                <p>Saya membangun website dan aplikasi web yang cepat, rapi, dan mudah digunakan — mulai dari landing page bisnis hingga aplikasi web interaktif.</p>
+                
+                <p>Fokus saya: solusi yang benar-benar sesuai kebutuhan Anda, bukan sekadar template.</p>
+
+                <div class="hero-actions">
+                    <a href="#project" class="btn-pill-orange">Lihat Pekerjaan Saya</a>
+                    <a href="pages/cv.html" class="btn-pill-dark">Buka CV Interactive &rarr;</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="img-frame">
+                    <img src="images/profile/foto_parlin.jpg" alt="Parlin Sianturi" class="profile-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="about-header">
+                    <span class="section-title">MENGENAL SAYA</span>
+                    <h2>Tentang Saya</h2>
+                    <div class="title-line-orange"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-item reveal">
+                        <div class="card-icon-box orange"><i class="fa-solid fa-people-group"></i></div>
+                        <h3>Latar Belakang</h3>
+                        <p>Saya berasal dari keluarga yang memiliki nilai-nilai kuat dan semangat untuk terus belajar secara konsisten.</p>
+                        <a href="about.html" class="view-link">Selengkapnya &rarr;</a>
+                    </div>
+
+                    <div class="about-item reveal reveal-delay-1">
+                        <div class="card-icon-box cyan"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>Pendidikan</h3>
+                        <p>Dasar teknis yang solid dari pendidikan formal di bidang Teknik Informatika, didukung eksplorasi mandiri di berbagai teknologi web modern.</p>
+                        <button class="view-link edu-modal-trigger" id="edu-open-btn">
+                            Selengkapnya &rarr;
+                        </button>
+                    </div>
+
+                    <div class="about-item reveal reveal-delay-2">
+                        <div class="card-icon-box orange"><i class="fa-solid fa-briefcase"></i></div>
+                        <h3>Pengalaman</h3>
+                        <p>9+ tahun berkecimpung di dunia IT memberi saya pemahaman mendalam soal infrastruktur dan sistem — bekal berharga untuk membangun web yang tak cuma bagus, tapi juga stabil dan aman.</p>
+                        <button class="view-link exp-modal-trigger" id="exp-open-btn">
+                            Selengkapnya &rarr;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <section id="project" class="project-section">
+            <div class="project-container">
+                <div class="project-header">
+                    <span class="section-title title-cyan">PORTOFOLIO</span>
+                    <h2>Proyek Pilihan</h2>
+                    <div class="title-line-cyan"></div>
+                    <p class="section-subtitle">Berikut adalah beberapa proyek yang telah dan sedang saya kerjakan.</p>
+                </div>
+
+                <div class="project-grid">
+                    <div class="project-item reveal">
+                        <div class="card-icon-box cyan"><i class="fas fa-landmark"></i></div>
+                        <h3>Website Kebudayaan</h3>
+                        <span class="tech-tag">HTML &bull; CSS &bull; JS</span>
+                        <p>Website informasi kebudayaan dan sejarah daerah Sumatera Utara.</p>
+                        <a href="pages/sejarah.html" class="view-link">Jelajahi &rarr;</a>
+                    </div>
+
+                    <div class="project-item reveal reveal-delay-1">
+                        <div class="card-icon-box orange"><i class="fas fa-database"></i></div>
+                        <h3>Aplikasi Web</h3>
+                        <span class="tech-tag">React &bull; Node.js &bull; Express</span>
+                        <p>Aplikasi pengelolaan dan perencanaan keuangan pribadi yang interaktif.</p>
+                        <a href="pages/financial-planner.html" class="view-link">Coba Sekarang &rarr;</a>
+                    </div>
+
+                    <div class="project-item reveal reveal-delay-2">
+                        <div class="card-icon-box cyan"><i class="fas fa-cloud"></i></div>
+                        <h3>Cloud & DevOps</h3>
+                        <span class="tech-tag">AWS &bull; Docker &bull; Linux</span>
+                        <p>Implementasi deployment dan manajemen infrastruktur berbasis cloud.</p>
+                        <a href="#" class="view-link disabled">Segera Hadir &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <span class="section-title">KONTAK</span>
+                    <h2>Hubungi Saya</h2>
+                    <div class="title-line-orange"></div>
+                    <p class="section-subtitle">Punya pertanyaan atau tertarik berdiskusi? Silakan tinggalkan pesan.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item reveal">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-detail">
+                                <h4>Email</h4>
+                                <p>parlinsianturi@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item reveal reveal-delay-1">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-detail">
+                                <h4>Lokasi</h4>
+                                <p>Jakarta, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item reveal reveal-delay-2">
+                            <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+                            <div class="contact-detail">
+                                <h4>LinkedIn</h4>
+                                <p><a href="https://www.linkedin.com/in/halomoan-parlindungan-sianturi-039004102/" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/halomoan-parlindungan-sianturi</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" name="name" placeholder="Nama lengkap Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                        </div>
+                        <!-- Honeypot anti-spam: field tersembunyi, harus tetap kosong. Bot biasanya mengisi semua field. -->
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px;" aria-hidden="true">
+                        <button type="submit" class="btn-pill-orange full-width" id="contact-submit-btn">Kirim Pesan</button>
+                        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Pendidikan -->
+    <div class="modal-overlay hidden" id="edu-modal" role="dialog" aria-modal="true">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <h2><i class="fa-solid fa-graduation-cap icon-cyan"></i> Riwayat Pendidikan</h2>
+                    <p class="modal-subtitle">Perjalanan akademik Parlin Sianturi</p>
+                </div>
+                <button class="modal-close-btn" id="edu-close-btn" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="edu-timeline">
+                    <div class="edu-item latest">
+                        <div class="edu-dot"></div>
+                        <div class="edu-card">
+                            <span class="edu-level">S1 — Sarjana</span>
+                            <h3 class="edu-school">Universitas Gunadarma</h3>
+                            <p class="edu-detail">Teknik Informatika &middot; Lulus 2014</p>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-dot"></div>
+                        <div class="edu-card">
+                            <span class="edu-level">SMA / Sederajat</span>
+                            <h3 class="edu-school">SMAN 13 Tangerang</h3>
+                            <p class="edu-detail">Lulus 2010</p>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-dot"></div>
+                        <div class="edu-card">
+                            <span class="edu-level">SMP / Sederajat</span>
+                            <h3 class="edu-school">SMP Yadika 3 Ciledug</h3>
+                            <p class="edu-detail">Lulus 2007</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pengalaman -->
+    <div class="modal-overlay hidden" id="exp-modal" role="dialog" aria-modal="true">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <h2><i class="fa-solid fa-briefcase icon-orange"></i> Pengalaman Kerja</h2>
+                    <p class="modal-subtitle">9 tahun perjalanan karier di dunia IT</p>
+                </div>
+                <button class="modal-close-btn" id="exp-close-btn" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="acc-item">
+                    <button class="acc-trigger active">
+                        <div class="acc-avatar avatar-orange">IM</div>
+                        <div class="acc-main">
+                            <div class="acc-company">PT. Imora Motor</div>
+                            <div class="acc-role">Staff IT &middot; Honda Jakarta Center</div>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-year">2019 – Sekarang</span>
+                            <span class="acc-badge-active">Aktif</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="acc-body open">
+                        <hr class="acc-divider">
+                        <p class="acc-desc">Bertanggung jawab sebagai IT Support dan Helpdesk untuk seluruh operasional teknologi informasi di Honda Jakarta Center.</p>
+                    </div>
+                </div>
+
+                <div class="acc-item">
+                    <button class="acc-trigger">
+                        <div class="acc-avatar avatar-cyan">BM</div>
+                        <div class="acc-main">
+                            <div class="acc-company">PT. Bank Mayora</div>
+                            <div class="acc-role">Staff IT</div>
+                        </div>
+                        <div class="acc-meta">
+                            <span class="acc-year">2015 – 2019</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="acc-body">
+                        <hr class="acc-divider">
+                        <p class="acc-desc">Menangani dukungan teknis IT dan pemeliharaan mesin ATM di lingkungan perbankan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Parlin Sianturi. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/parlin1005" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/halomoan-parlindungan-sianturi-039004102/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/6282134882685" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
