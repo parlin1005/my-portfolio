@@ -804,7 +804,8 @@ h2,
 .collab-modal-container {
     max-width: 560px;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;    /* tetap potong sisi kiri-kanan */
+    overflow-y: auto;      /* tapi izinkan scroll atas-bawah */
 }
 
 .collab-modal-topbar {
@@ -1783,10 +1784,29 @@ h2,
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 107, 53, 0.35) transparent;
     padding: 36px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     transform: translateY(20px) scale(0.95);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 107, 53, 0.35);
+    border-radius: 10px;
+}
+
+.modal-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 107, 53, 0.6);
 }
 
 .project-modal.active .modal-container {
